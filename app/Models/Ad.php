@@ -11,4 +11,9 @@ class Ad extends Model
     	'description',
     	'users_id',
     ];
+
+    public function users()
+    {
+    	return $this->belongsTo('App\User');
+    }
 }

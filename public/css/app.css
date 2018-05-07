@@ -10412,12 +10412,144 @@ a.text-dark:focus {
 }
 
 body {
-  padding-top: 5rem;
   background-color: #ffffff;
 }
 
 .create_ad {
   margin-bottom: 10px;
+}
+
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  line-height: 60px;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.card-text {
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
+}
+
+.createAd-wrapper {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.createAd-wrapper .box {
+  margin: 0 auto;
+  padding: 35px 0 30px;
+  float: none;
+  width: 400px;
+  -webkit-box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.createAd-wrapper .box .content-wrap {
+  width: 82%;
+  margin: 0 auto;
+}
+
+.createAd-wrapper .box .createAd {
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 8px 30px;
+}
+
+@media (max-width: 767px) {
+  .createAd-wrapper .box {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .createAd-wrapper .box {
+    width: 90%;
+  }
+}
+
+.login-wrapper {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.login-wrapper .box {
+  margin: 0 auto;
+  padding: 35px 0 30px;
+  float: none;
+  width: 400px;
+  -webkit-box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.login-wrapper .box .content-wrap {
+  width: 82%;
+  margin: 0 auto;
+}
+
+.login-wrapper .box .login {
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 8px 30px;
+}
+
+@media (max-width: 767px) {
+  .login-wrapper .box {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-wrapper .box {
+    width: 90%;
+  }
 }
 
 .navbar-laravel {

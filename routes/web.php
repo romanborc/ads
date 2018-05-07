@@ -11,8 +11,18 @@
 |
 */
 
-Route::get('/', "Ads\AdsController@index")->name('index');
+/*===============-Ads Controller-======================*/
+Route::get('/', "Ads\AdsController@index")->name('home');
+Route::get('/ad/edit', "Ads\AdsController@add");
+Route::post('/ad/store', "Ads\AdsController@store");
+Route::get('/ad/{id}', "Ads\AdsController@show");
+Route::DELETE('/ads/{ad}/remove', "Ads\AdsController@remove");
+Route::get('/ads/{ad}/edit', "Ads\AdsController@edit");
+Route::PATCH('/ads/{ad}/edit', "Ads\AdsController@update");
 
-Route::get('/login', "AuthController@create")->name('login');
-Route::post('/login', "AuthController@store");
-Route::get('/logout', "AuthController@destroy")->name('logout');
+
+/*===============-Auth Controller-======================*/
+Route::get('/login', "Auth\AuthController@create")->name('login');
+Route::post('/login', "Auth\AuthController@store");
+Route::get('/logout', "Auth\AuthController@destroy")->name('logout');
+
