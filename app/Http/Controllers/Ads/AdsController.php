@@ -69,7 +69,11 @@ class AdsController extends Controller
 
     public function edit(Ad $ad)
     {
-        return view('ads.edit', ["ad" => $ad]);
+        if (auth()->user()->id == $ad->users_id) {
+            return view('ads.edit', ["ad" => $ad]);
+        } else {
+            return abort(404);
+        }
     }
 
     public function update(Ad $ad)

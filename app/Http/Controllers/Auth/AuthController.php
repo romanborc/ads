@@ -25,12 +25,9 @@ class AuthController extends Controller
             'password' => 'required|min:4'
         ]);
 
-        $users_names = User::all()->pluck('name');
-        $concurrences = true;
 
-        foreach ($users_names as $user_name) {
-            if ($user_name == request('name')) {
-                $concurrences = false;
+        $user_name = User::where('name', request('name'))->first();
+            if ($user_name) {
                 $user_pswrd = User::where('name', request('name'))->pluck('password')->first();
                 if (Hash::check(request('password'), $user_pswrd)) {
                     $user = User::where('name', request('name'))->first();
@@ -41,17 +38,14 @@ class AuthController extends Controller
                             'errors' => "A user with this name already exists, check your password or choose a different name"
                     ]);
                 }
-            }
-        }
-
-        if ($concurrences) {
-            $user = User::create([
+            } else {
+                $user = User::create([
                     'name' => request('name'),
                     'password' => bcrypt(request('password'))
             ]);
             auth()->login($user);
             return redirect()->home();
-        }
+            }
     }
 
     public function destroy()
